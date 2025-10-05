@@ -1,56 +1,59 @@
-# Visor de Sistemas de Archivos FAT16 y EXT2
+# FAT16 and EXT2 File System Viewer
 
-Este proyecto esta implementado en **C** con Visual Studio Code. Este código es capaz de:
+This project is implemented in C with Visual Studio Code. The code can:
 
-- Mostrar la información básica del sistema de archivos.  
-- Mostrar el árbol de directorios.  
-- Mostrar el contenido de un archivo dado por su ruta.
+- Display basic file system information.
+- Display the directory tree.
+- Display the contents of a file given its path.
 
-Compatible con los sistemas de archivos **FAT16** (antiguamente usado en Windows) y **EXT2** (antiguamente usado en Linux). Ambos sistemas, aunque ya obsoletos en la mayoría de los casos, son fundamentales para entender la evolución de los sistemas de archivos y su funcionamiento interno.
-
----
-
-## Funcionalidades
-
-- **Visualización de la información general**  
-El programa permite obtener datos esenciales como el tamaño de bloque, el número de inodos, el nombre del volumen y otra información relevante del sistema de archivos.
-
-- **Exploración del árbol de directorios**  
-Permite recorrer y mostrar el árbol de directorios y archivos de la imagen del sistema de archivos, facilitando una comprensión clara de su estructura interna.
-
-- **Visualización del contenido de archivos**  
-Esta funcionalidad permite acceder al contenido de archivos de texto o binarios directamente desde la imagen del sistema de archivos, especificando la ruta del archivo deseado.
+It is compatible with the FAT16 file system (formerly used in Windows) and EXT2 (formerly used in Linux). Although largely obsolete today, both are fundamental to understanding the evolution of file systems and their internal workings.
 
 ---
 
-## Compilación y ejecución
+## Features
 
-Compila el programa con `gcc` utilizando el archivo makefile proporcionado:
+- **General information display**  
+  The program retrieves essential data such as block size, number of inodes, volume name, and other relevant file system information.
+
+- **Directory tree exploration**  
+  It traverses and displays the directory and file tree of the file system image, providing a clear view of its internal structure.
+
+- **File content display**  
+  This feature allows accessing the content of text or binary files directly from the file system image by specifying the desired file path.
+
+---
+
+## Build and run
+
+Compile the program with `gcc` using the provided makefile:
 
 ```bash
 make
 ```
 
-Esto creará un ejecutable llamado program (además de los archivos .o generados por cada módulo).
 
-Luego, puedes ejecutar los siguientes comandos:
-- Para ver la información general del sistema de archivos:
+This will create an executable named `program` (in addition to the `.o` files generated for each module).
+
+Then, run the following commands:
+- To view general file system information:
+
 ```
 ./program --info <filesystem>
 ```
 
-- Para mostrar el árbol de directorios:
+- To display the directory tree:
 ```
 ./program --tree <filesystem>
 ```
 
-- Para ver el contenido de un archivo dentro del sistema de archivos:
+- To display the contents of a file within the file system:
 ```
 ./program --cat <filesystem> <ruta_archivo>
 ```
 
+---
 
-## Compatibilidad con sistemas de archivos
+## File system compatibility
 
-Imágenes de sistemas de archivos FAT16.
-Imágenes de sistemas EXT2.
+- FAT16 file system images.
+- EXT2 file system images.
